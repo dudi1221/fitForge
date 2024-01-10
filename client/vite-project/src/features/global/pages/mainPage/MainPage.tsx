@@ -125,7 +125,7 @@ const MainPage = () => {
                                         <YAxis stroke="#333" />
                                         <Tooltip />
                                         <Legend />
-                                        <Bar dataKey="progress" fill={getBarColor(myChalenges)}/>
+                                        <Bar dataKey="progress" /* fill={getBarColor(myChalenges)} *//>
                                     </BarChart>
                                 </ResponsiveContainer>
                             </div>

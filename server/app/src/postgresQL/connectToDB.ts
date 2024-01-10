@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 
 export const db = new Pool({
-    user: 'dudi',
+  user: 'dudi',
   host: 'localhost',
   database: 'shopping_list',
   password: 'shuki1221',

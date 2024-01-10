@@ -37,6 +37,7 @@ services:
       - 4500:4500
     environment:
       # NODE_ENV: production
+      NODE_ENV: development
       PGHOST: pg
       PGPORT: 5432
       PGUSER: postgres
@@ -51,10 +52,10 @@ services:
       - pg
       - redis
       - client
-    develop:
-      watch:
-        - action: rebuild
-          path: ./server/app/package.json
+    # develop:
+    #   watch:
+    #     - action: rebuild
+    #       path: ./server/app/package.json
     volumes:
       - ./server/app/src:/app/src
 
@@ -63,12 +64,14 @@ services:
     build: ./client
     ports:
       - "3000:3000"
-    develop:
-      watch:
-        - action: rebuild
-          path: ./client/vite-project/package.json
+    # deploy:
+    #   watch:
+    #     - action: rebuild
+    #       path: ./client/vite-project/package.json
     volumes:
     - ./client/vite-project/src:/app/src
+    environment:
+      - NODE_ENV=development
 
 
 

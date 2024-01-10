@@ -2,10 +2,17 @@
 
 CREATE DATABASE shopping_list;
 
+-- CREATE TABLE IF NOT EXISTS users (
+--     userid uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+--     name TEXT,
+--     email TEXT NOT NULL UNIQUE,
+--     password TEXT NOT NULL,
+--     created_at TIMESTAMPTZ DEFAULT NOW() NOT NULL
+-- );
+
 CREATE TABLE IF NOT EXISTS users (
-    userid uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     name TEXT,
-    email TEXT NOT NULL UNIQUE,
-    password TEXT NOT NULL,
+    age INTEGER,
     created_at TIMESTAMPTZ DEFAULT NOW() NOT NULL
 );
