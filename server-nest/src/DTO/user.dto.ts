@@ -1,9 +1,35 @@
-import { IsNotEmpty } from "class-validator";
+import { Field, InputType, Int } from "@nestjs/graphql";
+import { IsEmail, IsNotEmpty, IsString } from "class-validator";
 
+@InputType()
 export class UserDto {
-    id: number;
+    @IsNotEmpty()
+    @IsString()
+    @Field()
+    username: string;
 
     @IsNotEmpty()
-    name: string;
-    age: number;
+    @IsEmail()
+    @Field()
+    email: string;
+
+    @IsNotEmpty()
+    @IsString()
+    @Field()
+    password: string;
+
+    @IsNotEmpty()
+    @IsString()
+    @Field()
+    fitness_goals: string;
+    @Field(() => Int)
+    level?: number;
+    @Field(() => Int)
+    experience_points?: number;
+}
+
+export class UpdateUserDto {
+    fitness_goals: string;
+    level?: number;
+    experience_points?: number;
 }

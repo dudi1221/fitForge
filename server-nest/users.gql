@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserModel {
+  id: String!
+  username: String!
+  email: String!
+  password: String!
+  fitness_goals: String!
+  level: Int!
+}
+
+type Query {
+  findAll: [UserModel!]!
+}
+
+type Mutation {
+  createUser(user: UserDto!): UserModel!
+  deleteUser(id: Float!): UserModel!
+}
+
+input UserDto {
+  username: String!
+  email: String!
+  password: String!
+  fitness_goals: String!
+  level: Int!
+  experience_points: Int!
+}

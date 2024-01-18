@@ -1,60 +1,54 @@
 import { Injectable } from '@nestjs/common';
-import { UserDto } from 'src/DTO/user.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UpdateUserDto, UserDto } from 'src/DTO/user.dto';
+import { User } from './user.entity';
+import { DeleteResult, Repository, UpdateResult } from 'typeorm';
+import { encryptionPassword } from './utils/encryption';
 
 @Injectable()
 export class UsersService {
-    users: UserDto[] = [];
-    constructor() {
-        let user1: UserDto = new UserDto();
-        user1.id = 1;
-        user1.name = 'shuki';
-        user1.age = 24;
+    // users: UserDto[] = [];
+    constructor(
+        @InjectRepository(User)
+        private readonly userRepsitory: Repository<User>,
+    ) {}
 
-        let user2: UserDto = new UserDto();
-        user2.id = 2;
-        user2.name = 'riko';
-        user2.age = 22;
-
-        let user3: UserDto = new UserDto();
-        user3.id = 3;
-        user3.name = 'dedi';
-        user3.age = 27;
-
-        this.users.push(user1);
-        this.users.push(user2);
-        this.users.push(user3);
+    findAll() {
+        return this.userRepsitory.find();
     }
 
-    getAllUsers() :UserDto[] {
-        return this.users;
-    }
+    // findOne(id: number): Promise<User | null> {
+    //     return this.userRepsitory.findOneBy({ id });
+    // }
 
-    getUserById(id: number): UserDto {
-        return this.users.find(user => user.id == id);
-    }
-
-    addUser(user: UserDto) {
-        this.users.push(user);
-        return 'User successfully created';
-    }
-
-    updateUser( id: number, user: UserDto) {
-        let index = this.users.findIndex(user => user.id == id);
-        if(index >= 0) {
-            this.users[index] = user;
-            return 'User successfully updated';
-        } else {
-            return 'Id must be greader than zero';
+    findByEmail(email: string): Promise<User | null> {
+        try {
+            return this.userRepsitory.findOneBy({ email });
+        } catch (error) {
+            return Promise.reject(error);
         }
     }
 
-    deleteUser(id: number) {
-        let index = this.users.findIndex(user => user.id == id);
-        if(index >= 0) {
-            this.users.splice(index, 1);
-            return 'User successfully deleted';
-        } else {
-            return 'Id must be greader than zero';
+    async create(user: UserDto): Promise<User> {
+        try {
+            // const ifExists = await this.findByEmail( user.email );
+            // if (ifExists) throw new Error('Email already exists');
+            const newUser: UserDto = { ...user, password: user.password };
+            const encryption = encryptionPassword(newUser.password);
+            newUser.password = await encryption;
+            return this.userRepsitory.save(newUser);
+        } catch (error) {
+            return Promise.reject(error);
         }
+    }
+
+    async update(id: number, user: UpdateUserDto): Promise<UpdateResult> {
+        const updatedUser = await this.userRepsitory.update(id, user);
+        return updatedUser;
+    }
+
+    async delete(id: number) {
+        const deleted = await this.userRepsitory.delete(id);
+        return deleted;
     }
 }
