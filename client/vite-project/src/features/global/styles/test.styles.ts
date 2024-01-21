@@ -10,16 +10,6 @@ export const Title = styled.div`
 `
 
 export const ChallengesCard = styled.div`
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-140%, -60%);
-    box-sizing: border-box;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgb(23, 32, 90);
-    border: 2px solid #2a3cad;
-    padding: 20px; */
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,59 +17,7 @@ export const ChallengesCard = styled.div`
     border: 0.5px solid rgb(156, 162, 218);
     border-radius: 2px;
     background-color: rgb(240, 240, 240);
-    margin-top: 160px;
     box-shadow: 2px 5px 5px 0px;
-    /* span{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-        box-sizing: border-box;
-    }
-    span:nth-child(2){
-        transform:rotate(90deg);
-    }
-    span:nth-child(3){
-        transform:rotate(180deg);
-    }
-    span:nth-child(4){
-        transform:rotate(270deg);
-    } */
-    /* span:before{
-        color: #50dfdb;
-        content: '𝕎𝕖𝕝𝕔𝕠𝕞𝕖';
-        position: absolute;
-        width:50%;
-        height: 3px;
-        background: #50dfdb;
-        animation: animate 4s linear infinite;
-    }
-    @keyframes animate {
-        0% {
-        transform:scaleX(0);
-        transform-origin: left;
-        }
-        50%
-        {
-            transform:scaleX(1);
-        transform-origin: left;
-        } */
-        /* 50.1%
-        {
-            transform:scaleX(4);
-        transform-origin: right;
-            
-        }
-        
-        100%
-        {
-            transform:scaleX(0);
-        transform-origin: right;
-            
-        } */
-    /* } */
 `
 
 export const ChallengeCard = styled.div`
@@ -100,7 +38,7 @@ export const StatusButton = styled.button`
     margin: 15px;
     padding-right: 10px;
     padding-left: 10px;
-    background: linear-gradient(to top, rgb(104, 168, 96), rgb(183, 209, 179));
+    background: linear-gradient(to top, #00C49F, rgb(183, 209, 179));
     transition: background-color 300ms;
     border: 1px solid;
     border-radius: 2px;
@@ -117,7 +55,7 @@ export const InProgressButton = styled.button`
     margin: 15px;
     padding-right: 10px;
     padding-left: 10px;
-    background: linear-gradient(to top, orange, rgb(248, 212, 144));
+    background: linear-gradient(to top, orange, #ffd57c);
     transition: background-color 300ms;
     border: 1px solid;
     border-radius: 2px;
@@ -146,15 +84,8 @@ export const ListButton = styled.button`
 
 export const GraphCard = styled.div`
     display: flex;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    height: 500px;
+    height: 350px;
     width: 650px;
-    /* border: 0.5px solid rgb(156, 162, 218); */
-    /* border-radius: 2px; */
-    /* background-color: rgb(240, 240, 240); */
-    margin-top: 180px;
-    /* box-shadow: 2px 5px 5px 0px; */
 `
 
 
