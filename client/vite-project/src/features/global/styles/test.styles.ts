@@ -7,15 +7,27 @@ export const Container = styled.div`
 export const Title = styled.div`
     justify-content: center;
     color: rgb(240, 240, 240);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-family: sans-serif;
+`
+
+export const CardsContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7vh;
+    flex-wrap: wrap;
 `
 
 export const ChallengesCard = styled.div`
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     width: 380px;
+    max-width: 400px;
+    margin-bottom: 20px;
     border: 0.5px solid rgb(156, 162, 218);
-    border-radius: 2px;
+    border-radius: 0.2em;
     background-color: rgb(240, 240, 240);
     box-shadow: 2px 5px 5px 0px;
 `
@@ -28,7 +40,6 @@ export const ChallengeCard = styled.div`
     margin: 5px;
     margin-bottom: 15px;
     color: rgb(207, 206, 206);
-    /* border-bottom: 1px solid rgb(156, 162, 218); */
     border-radius: 5px;
     background: linear-gradient(to right, rgb(49, 49, 49), rgb(140, 140, 140), rgb(49, 49, 49));
 `
@@ -73,7 +84,7 @@ export const ListButton = styled.button`
     margin: 15px;
     border: 1px solid black;
     border-radius: 4px;
-    background: linear-gradient(to top, black, gray);
+    /* background: linear-gradient(to top, black, gray); */
     color: rgb(240, 240, 240);
     box-shadow: 0 1px 2px 0;
     &:hover {
@@ -82,10 +93,16 @@ export const ListButton = styled.button`
     }
 `
 
+export const ChartsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+`
+
 export const GraphCard = styled.div`
     display: flex;
-    height: 350px;
-    width: 650px;
+    height: 38vh;
+    width: 54vw;
 `
 
 
