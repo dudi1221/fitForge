@@ -2,6 +2,11 @@ import { styled } from 'styled-components';
 
 export const Container = styled.div`
     margin: 0 auto;
+    height: 38vh;
+    /* background-image: url("https://img.freepik.com/premium-photo/muscular-man-working-out-battle-ropes-gym_53876-158325.jpg?w=826"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem;
 `
 
 export const Title = styled.div`
@@ -42,6 +47,7 @@ export const ChallengeCard = styled.div`
     color: rgb(207, 206, 206);
     border-radius: 5px;
     background: linear-gradient(to right, rgb(49, 49, 49), rgb(140, 140, 140), rgb(49, 49, 49));
+    box-shadow: 2px 5px 5px 0px;
 `
 
 export const StatusButton = styled.button`
@@ -84,7 +90,6 @@ export const ListButton = styled.button`
     margin: 15px;
     border: 1px solid black;
     border-radius: 4px;
-    /* background: linear-gradient(to top, black, gray); */
     color: rgb(240, 240, 240);
     box-shadow: 0 1px 2px 0;
     &:hover {
@@ -94,8 +99,8 @@ export const ListButton = styled.button`
 `
 
 export const ChartsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     font-family: sans-serif;
 `
 

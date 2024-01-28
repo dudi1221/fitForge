@@ -7,7 +7,7 @@ import Chart2 from "../../components/mainPage components/chartsCard/Chart2";
 const MainPage = () => {
 
     return (
-        <Container>
+        <Container style={{backgroundImage: `url("https://img.freepik.com/premium-photo/muscular-man-working-out-battle-ropes-gym_53876-158325.jpg?w=826")`}}>
             <Title>
                 <Header />
             </Title>
