@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { StyledGridItemProps } from './interfaces';
 
 export const Container = styled.div`
     margin: 0 auto;
@@ -7,9 +8,31 @@ export const Container = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     padding: 2rem;
+    position: relative;
 `
 
-export const Title = styled.div`
+export const Title = styled.h1`
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-90%, -50%);
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+`;
+
+export const GradientOverlay = styled.div`
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  z-index: 1;
+`;
+
+export const Header = styled.div`
     justify-content: center;
     color: rgb(240, 240, 240);
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -110,12 +133,6 @@ export const GraphCard = styled.div`
     width: 54vw;
 `
 
-
-
-interface StyledGridItemProps {
-    md?: number;
-}
-
 export const StyledBox = styled.div`
     margin-top: 1vh;
     background: #F0F0F0;
@@ -141,3 +158,23 @@ export const StyledTypography = styled.div`
     font-style: italic;
     line-height: normal;
 `;
+
+export const ChallengeInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+`
+
+export const ChallengeInfoCard = styled.div`
+    display: flex;
+    align-items: center;
+    width: 380px;
+    max-width: 400px;
+    margin-bottom: 20px;
+    border: 0.5px solid rgb(156, 162, 218);
+    border-radius: 0.2em;
+    background-color: rgb(240, 240, 240);
+    box-shadow: 2px 5px 5px 0px;
+    background-color: black;
+`

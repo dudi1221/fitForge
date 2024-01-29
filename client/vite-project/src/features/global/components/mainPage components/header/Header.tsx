@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 
-const Header = () => {
+const Title = () => {
     // const userName = 'user'
 
     return (
@@ -14,4 +14,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Title;
