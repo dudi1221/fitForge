@@ -1,4 +1,4 @@
-import { CompletedChallenge } from 'src/completed-challeng/completed-challenge.entity';
+import { CompletedChallenge } from './../completed-challeng/completed-challenge.entity';
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 
 @Entity('challenges')

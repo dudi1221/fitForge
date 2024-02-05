@@ -1,5 +1,5 @@
-import { Challenge } from 'src/callenges/challenge.entity';
-import { User } from 'src/users/user.entity';
+import { Challenge } from './../callenges/challenge.entity';
+import { User } from './../users/user.entity';
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, Unique, ManyToOne, JoinColumn } from 'typeorm';
 
 @Entity('completed_challenges')
